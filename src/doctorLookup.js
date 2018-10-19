@@ -1,3 +1,5 @@
+const Promise = require('es6-promise').Promise;
+
 export class Search {
   lookup(name, query) {
     return new Promise(function(resolve, reject) {
