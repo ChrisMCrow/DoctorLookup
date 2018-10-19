@@ -4,6 +4,34 @@
     <title>DoctorLookup</title>
   </head>
   <body>
-    <p>DoctorLookup</p>
+    <div class="container">
+      <h1>Find a Doctor In Your Area</h1>
+      <form id="doctorLookup">
+          <label for="doctorName">Search for a specific Doctor:</label>
+          <input id="doctorName" type="text" placeholder="first and/or last name">
+          <label for="query">Search by specialty or medical condition:</label>
+          <input id="query" type="text">
+        <button class="btn btn-success" type="submit">Search</button>
+      </form>
+      <div>
+        <table class="table table-striped" >
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Address</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">Accepting New Patients?</th>
+            </tr>
+          </thead>
+          <tbody id="results-table">
+
+          </tbody>
+        </table>
+      </div>
+      <div id="errors">
+
+      </div>
+    </div>
   </body>
 </html>

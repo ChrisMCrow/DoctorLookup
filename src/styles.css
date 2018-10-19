@@ -1,0 +1,28 @@
+h1 {
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+form {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.tableImg {
+  width: 150px;
+}
+
+.tableImg:hover {
+  cursor: pointer;
+}
+
+.modal-body img {
+  width: 100%;
+}
+
+input {
+margin-right: 30px;
+}
