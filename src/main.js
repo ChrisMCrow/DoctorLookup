@@ -14,9 +14,13 @@ $(document).ready(function() {
     let promise = newSearch.lookup(doctorName, query);
 
     promise.then(function(response) {
-      $("results-table").empty();
-
+      $("#results-table").empty();
+      $("#errors").empty();
       let body = JSON.parse(response);
+
+      if (body.data.length === 0) {
+        $("#errors").text("There were no doctors found matching your search criteria.");
+      }
       for (let i = 0; i < body.data.length; i++) {
         let firstName = body.data[i].profile.first_name;
         let lastName = body.data[i].profile.last_name;
@@ -24,7 +28,7 @@ $(document).ready(function() {
           `${body.data[i].practices[0].visit_address.street}
           ${body.data[i].practices[0].visit_address.street2}
           ${body.data[i].practices[0].visit_address.city}, ${body.data[i].practices[0].visit_address.state} ${body.data[i].practices[0].visit_address.zip}`;
-        let phone = body.data[i].practices[0].phones.number;
+        let phone = body.data[i].practices[0].phones[0].number;
         let newPatients = body.data[i].practices[0].accepts_new_patients;
         let doctor = new Doctor(firstName, lastName, address, phone, newPatients);
 

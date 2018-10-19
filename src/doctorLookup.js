@@ -6,9 +6,7 @@ export class Search {
       let request = new XMLHttpRequest();
       let url = `https://api.betterdoctor.com/2016-03-01/doctors?user_key=${process.env.API_KEY}&location=or-portland&query=${query}&name=${name}`;
       request.onload = function() {
-        console.log("LOADED");
         if(this.status === 200){
-          console.log(request.response);
           resolve(request.response);
         } else {
           reject(Error(request.statusText));
